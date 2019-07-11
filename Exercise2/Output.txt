@@ -1,0 +1,40 @@
+raviv@trichter-hp-laptop:~/Desktop$ ./ex2
+@ ls
+ex2  ex2.c  Exercise2.c  ls.pdf  Output.txt  Raviv  ReadMe.txt	shell.pdf
+@ pwd
+/home/raviv/Desktop
+@ ls -al
+total 1012
+drwxr-xr-x  3 raviv raviv   4096 Nov 22 20:38 .
+drwxr-xr-x 47 raviv raviv   4096 Nov 21 22:19 ..
+-rwxr-xr-x  1 raviv raviv  13352 Nov 20 14:15 ex2
+-rw-r--r--  1 raviv raviv   6284 Nov 21 20:57 ex2.c
+-rw-r--r--  1 raviv raviv   6852 Nov 22 20:35 Exercise2.c
+-rw-rw-r--  1 raviv raviv 381949 Nov 22 20:31 ls.pdf
+-rw-r--r--  1 raviv raviv      0 Nov 22 20:38 Output.txt
+drwxrwxr-x  5 raviv raviv   4096 Nov 13 21:53 Raviv
+-rw-r--r--  1 raviv raviv     25 Nov 22 20:33 ReadMe.txt
+-rw-rw-r--  1 raviv raviv 593263 Nov 13 10:39 shell.pdf
+@ touch a.txt
+@ ls
+a.txt  ex2.c	    ls.pdf	Raviv	    shell.pdf
+ex2    Exercise2.c  Output.txt	ReadMe.txt
+@ echo > a.txt Hello World
+@ cat a.txt
+Hello World
+@ ls -al &
+@ total 1016
+drwxr-xr-x  3 raviv raviv   4096 Nov 22 20:39 .
+drwxr-xr-x 47 raviv raviv   4096 Nov 21 22:19 ..
+-rw-r--r--  1 raviv raviv     12 Nov 22 20:39 a.txt
+-rwxr-xr-x  1 raviv raviv  13352 Nov 20 14:15 ex2
+-rw-r--r--  1 raviv raviv   6284 Nov 21 20:57 ex2.c
+-rw-r--r--  1 raviv raviv   6852 Nov 22 20:35 Exercise2.c
+-rw-rw-r--  1 raviv raviv 381949 Nov 22 20:31 ls.pdf
+-rw-r--r--  1 raviv raviv      0 Nov 22 20:38 Output.txt
+drwxrwxr-x  5 raviv raviv   4096 Nov 13 21:53 Raviv
+-rw-r--r--  1 raviv raviv     25 Nov 22 20:33 ReadMe.txt
+-rw-rw-r--  1 raviv raviv 593263 Nov 13 10:39 shell.pdf
+pwd
+@ /home/raviv/Desktop
+exit

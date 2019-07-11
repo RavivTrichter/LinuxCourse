@@ -1,0 +1,97 @@
+//Running with out arguments to my own desktop
+gcc ls.c -o run
+
+My output :
+
+-rw-r--r--     2  raviv   raviv       0  Nov 02 2018  b.txt
+drwxr-xr-x     3  raviv   raviv    4096  Nov 02 2018  .
+lrwxrwxrwx     1  raviv   raviv       5  Nov 02 2018  c.txt -> a.txt
+drwxr-xr-x    46  raviv   raviv    4096  Nov 02 2018  ..
+-rw-r--r--     2  raviv   raviv       0  Nov 02 2018  a.txt
+drwxrwxr-x     5  raviv   raviv    4096  Sep 26 2018  Raviv
+-rw-r--r--     1  raviv   raviv       0  Nov 02 2018  output.txt
+-rwxr-xr-x     1  raviv   raviv   13496  Nov 02 2018  rav
+-rw-r--r--     1  raviv   raviv    4620  Nov 01 2018  ls.c
+
+Linux command on the same Directory : 
+ ls -al 
+
+total 40
+drwxr-xr-x  3 raviv raviv  4096 Nov  2 16:48 .
+drwxr-xr-x 46 raviv raviv  4096 Nov  2  2018 ..
+-rw-r--r--  2 raviv raviv     0 Nov  2 16:46 a.txt
+-rw-r--r--  2 raviv raviv     0 Nov  2 16:46 b.txt
+lrwxrwxrwx  1 raviv raviv     5 Nov  2 16:47 c.txt -> a.txt
+-rw-r--r--  1 raviv raviv  4620 Nov  1 15:22 ls.c
+-rw-r--r--  1 raviv raviv   653 Nov  2 16:52 output.txt
+-rwxr-xr-x  1 raviv raviv 13496 Nov  2 16:48 rav
+drwxrwxr-x  5 raviv raviv  4096 Sep 26 10:13 Raviv
+
+
+
+running 3 arguments:   ./run /home/raviv/Desktop /home/raviv/Desktop/Raviv /home/Desktop/c.txt
+
+My LS Output  =>   /home/raviv/Desktop :
+
+-rw-r--r--     2  raviv   raviv       0  Nov 02 2018  b.txt
+drwxr-xr-x     3  raviv   raviv    4096  Nov 02 2018  .
+lrwxrwxrwx     1  raviv   raviv       5  Nov 02 2018  c.txt -> a.txt
+drwxr-xr-x    46  raviv   raviv    4096  Nov 02 2018  ..
+-rw-r--r--     2  raviv   raviv       0  Nov 02 2018  a.txt
+drwxrwxr-x     5  raviv   raviv    4096  Sep 26 2018  Raviv
+-rw-r--r--     1  raviv   raviv    1201  Nov 02 2018  output.txt
+-rwxr-xr-x     1  raviv   raviv   13496  Nov 02 2018  rav
+-rw-r--r--     1  raviv   raviv    4620  Nov 01 2018  ls.c
+
+
+Linux ls -al (/home/raviv/Desktop): 
+
+total 40
+drwxr-xr-x  3 raviv raviv  4096 Nov  2 16:48 .
+drwxr-xr-x 46 raviv raviv  4096 Nov  2  2018 ..
+-rw-r--r--  2 raviv raviv     0 Nov  2 16:46 a.txt
+-rw-r--r--  2 raviv raviv     0 Nov  2 16:46 b.txt
+lrwxrwxrwx  1 raviv raviv     5 Nov  2 16:47 c.txt -> a.txt
+-rw-r--r--  1 raviv raviv  4620 Nov  1 15:22 ls.c
+-rw-r--r--  1 raviv raviv  2420 Nov  2 17:02 output.txt
+-rwxr-xr-x  1 raviv raviv 13496 Nov  2 16:48 rav
+drwxrwxr-x  5 raviv raviv  4096 Sep 26 10:13 Raviv
+
+
+
+
+My LS Output  => /home/raviv/Desktop/Raviv :
+
+drwxr-xr-x     3  raviv   raviv    4096  Sep 13 2018  Music
+-rw-rw-r--     1  raviv   raviv     308  Sep 10 2018  ImportantCommands.txt
+drwxrwxr-x     4  raviv   raviv    4096  Oct 13 2018  Studies
+drwxrwxr-x     2  raviv   raviv    4096  Apr 08 2018  Documents
+-rw-rw-r--     1  raviv   raviv   45323  Jun 03 2018  בעיית השליחים.pdf
+drwxrwxr-x     5  raviv   raviv    4096  Sep 26 2018  .
+drwxr-xr-x     3  raviv   raviv    4096  Nov 02 2018  ..
+-rw-rw-r--     1  raviv   raviv  303033  Sep 26 2018  EI2009-43.pdf
+
+
+
+Linux ls -al (/home/raviv/Desktop/Raviv) :
+
+total 376
+drwxrwxr-x 5 raviv raviv   4096 Sep 26 10:13 .
+drwxr-xr-x 3 raviv raviv   4096 Nov  2 16:48 ..
+drwxrwxr-x 2 raviv raviv   4096 Apr  8  2018 Documents
+-rw-rw-r-- 1 raviv raviv 303033 Sep 26 10:13 EI2009-43.pdf
+-rw-rw-r-- 1 raviv raviv    308 Sep 10 20:11 ImportantCommands.txt
+drwxr-xr-x 3 raviv raviv   4096 Sep 13 18:24 Music
+drwxrwxr-x 4 raviv raviv   4096 Oct 13 21:11 Studies
+-rw-rw-r-- 1 raviv raviv  45323 Jun  3 22:16 בעיית השליחים.pdf
+
+
+
+My LS Output  =>  /home/Desktop/c.txt :
+
+lrwxrwxrwx     1  raviv   raviv       5  Nov 02 2018  c.txt -> a.txt
+
+
+Linux ls -al (/home/Desktop/c.txt ) :
+
+lrwxrwxrwx 1 raviv raviv 5 Nov  2 16:47 c.txt -> a.txt

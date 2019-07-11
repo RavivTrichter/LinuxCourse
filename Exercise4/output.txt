@@ -1,0 +1,142 @@
+Terminal 1 (A) : 
+
+
+
+raviv@trichter-hp-laptop:~/Desktop/A$ cc /home/raviv/CLionProjects/Linux/Exercise4\ P2P/p2pserver.c -o serv
+raviv@trichter-hp-laptop:~/Desktop/A$ cc /home/raviv/CLionProjects/Linux/Exercise4\ P2P/p2pclient.c -o cli
+raviv@trichter-hp-laptop:~/Desktop/A$ ./serv &
+[2] 25416
+raviv@trichter-hp-laptop:~/Desktop/A$ Server - server: opening socket on 127.0.0.1:22420
+cc /home/raviv/CLionProjects/Linux/Exe./cli seed a1.txt a2.txt &
+[3] 25417
+raviv@trichter-hp-laptop:~/Desktop/A$ Client - share: sending MSG_NOTIFY for <a1.txt> @ 127.0.0.1:0
+Client - share: recieving MSG_ACK
+Server - notify: receiving MSG_NOTIFY
+Server - notify: assigned port 22421
+Server - notify: sending MSG_ACK
+Client - share: set port to : 22421
+Client - share: sending MSG_NOTIFY for <a2.txt> @ 127.0.0.1:22421
+Client - share: recieving MSG_ACK
+Server - notify: receiving MSG_NOTIFY
+Server - notify: sending MSG_ACK
+Client - sending the server MSG_FINISH_INPUT
+Server - Received MSG_FINISH_INPUT from client
+Server : finished with a client, waiting for the next one
+Client : From now on im acting like a server
+Server - notify: receiving MSG_NOTIFY
+Server - notify: assigned port 22422
+Server - notify: sending MSG_ACK
+Server - notify: receiving MSG_NOTIFY
+Server - notify: sending MSG_ACK
+Server - Received MSG_FINISH_INPUT from client
+Server : finished with a client, waiting for the next one
+Server - notify: receiving MSG_NOTIFY
+Server - notify: assigned port 22423
+Server - notify: sending MSG_ACK
+Server - notify: receiving MSG_NOTIFY
+Server - notify: sending MSG_ACK
+Server - Received MSG_FINISH_INPUT from client
+Server : finished with a client, waiting for the next one
+Server - dirreq: receiving MSG_DIRREQ
+Server - notify: sending MSG_NOTIFY with count = 6
+Peer - start_server : starting peer server
+Peer - start_server : received MSG_FILEREQ for file : < a1.txt >
+Peer - start_server : listening on socket
+Peer - sending_file: sending MSG_FILESRV with file <a1.txt>, file size : 28
+Peer - sending_file: sending content of file
+Peer - sending_file: file has been sent
+Peer- sending_file: finished sending file
+Peer - listening and waiting
+Server - notify: receiving MSG_NOTIFY
+Server - notify: assigned port 22424
+Server - notify: sending MSG_ACK
+Server - Received MSG_FINISH_INPUT from client
+Server : finished with a client, waiting for the next one
+Server - dirreq: receiving MSG_DIRREQ
+Server - notify: sending MSG_NOTIFY with count = 7
+Peer - listening and waiting
+Peer : EXIT SUCCESSFULLY
+
+
+
+
+
+
+Terminal 2 (B) : 
+
+
+
+raviv@trichter-hp-laptop:~/Desktop/B$ cc /home/raviv/CLionProjects/Linux/Exercise4\ P2P/p2pclient.c -o cli
+raviv@trichter-hp-laptop:~/Desktop/B$ ./cli seed a1.txt b.txt &
+[1] 25425
+raviv@trichter-hp-laptop:~/Desktop/B$ Client - share: sending MSG_NOTIFY for <a1.txt> @ 127.0.0.1:0
+Client - share: recieving MSG_ACK
+Client - share: set port to : 22422
+Client - share: sending MSG_NOTIFY for <b.txt> @ 127.0.0.1:22422
+Client - share: recieving MSG_ACK
+Client - sending the server MSG_FINISH_INPUT
+Client : From now on im acting like a server
+./cli shutdown
+Client - shut_down: receiving MSG_SHUTDOWN
+Client - shut_down: Shutting Down
+Client - shut_down: sending MSG_DIRENT (SHUTDOWN)
+Client - shut_down: received MSG_DIRHDR with 7 items (SHUTDOWN)
+Client - shut_down: received MSG_DIRENT for <a1.txt> @ 127.0.0.1:22421
+Client - shut_down: received MSG_DIRENT for <a2.txt> @ 127.0.0.1:22421
+Client - shut_down: received MSG_DIRENT for <a1.txt> @ 127.0.0.1:22422
+Client - shut_down: received MSG_DIRENT for <b.txt> @ 127.0.0.1:22422
+Client - shut_down: received MSG_DIRENT for <a2.txt> @ 127.0.0.1:22423
+Client - shut_down: received MSG_DIRENT for <b.txt> @ 127.0.0.1:22423
+Client - shut_down: received MSG_DIRENT for <a1.txt> @ 127.0.0.1:22424
+Client - shut_down: sending MSG_SHUTDOWN to peer at 127.0.0.1: 22421
+Client - shut_down: sending MSG_SHUTDOWN to peer at 127.0.0.1: 22422
+Peer - listening and waiting
+Peer : EXIT SUCCESSFULLY
+[1]+  Done                    ./cli seed a1.txt b.txt
+
+
+
+Terminal 3 (C)  :
+
+
+
+
+raviv@trichter-hp-laptop:~/Desktop/C$ cc /home/raviv/CLionProjects/Linux/Exercise4\ P2P/p2pclient.c -o cli
+raviv@trichter-hp-laptop:~/Desktop/C$ ./cli seed a2.txt b.txt &
+[1] 25431
+raviv@trichter-hp-laptop:~/Desktop/C$ Client - share: sending MSG_NOTIFY for <a2.txt> @ 127.0.0.1:0
+Client - share: recieving MSG_ACK
+Client - share: set port to : 22423
+Client - share: sending MSG_NOTIFY for <b.txt> @ 127.0.0.1:22423
+Client - share: recieving MSG_ACK
+Client - sending the server MSG_FINISH_INPUT
+Client : From now on im acting like a server
+./cli leech a1.txt &
+[2] 25454
+raviv@trichter-hp-laptop:~/Desktop/C$ Client - get_list: sending MSG_DIRREQ 
+Client - get_list: received MSG_DIRHDR with 6 items
+Client - get_list: received MSG_DIRENT for <a1.txt> @ 127.0.0.1:22421
+Client - get_file_from_client: getting file <a1.txt> from client on port 22421: 
+Client - get_file_from_client: established connection
+Client - get_file_from_client: sent MSG_FILEREQ
+Client - get_file_from_client: received MSG_FILESRV: file length : 28
+Client - get_file_from_client: opened file < a1.txt >
+Client - receiving last buffer from peer
+Client - writing last buffer into file
+Client - get_file_from_client : received the content of the file
+Client - get_file_from_client: obtained file < a1.txt > from client on port:22421
+Client : msg_dirent->m_name : a1.txt
+Client - get_file_from_client: sending MSG_NOTIFY to update server that this client holds file: < a1.txt >
+Client - receiving MSG_ACK from Server
+Client: received port from server : 12897
+Client - get_list: received MSG_DIRENT for <> @ 127.0.0.1:12641
+Client - get_list: received MSG_DIRENT for <> @ 127.0.0.1:11874
+Client - get_list: received MSG_DIRENT for <> @ 127.0.0.1:12897
+Client - get_list: received MSG_DIRENT for <> @ 127.0.0.1:11874
+Client - get_list: received MSG_DIRENT for <> @ 127.0.0.1:11874
+Client - finished leeching
+Client - sending the server MSG_FINISH_INPUT
+Client : From now on im acting like a server
+Peer - listening and waiting
+Peer : EXIT SUCCESSFULLY
+
